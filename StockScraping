@@ -9,11 +9,11 @@ sheet=wb.get_sheet_by_name('test')
 
 
 for eachstock in sheet.columns[0]:
-    x=('https://www.google.com/finance?q='+eachstock.value)
+    x=('http://www.investorguide.com/stock.php?ticker='+eachstock.value)
     print(x)
     r=urllib.request.build_opener(urllib.request.HTTPCookieProcessor).open('http://www.investorguide.com/stock.php?ticker='+eachstock.value).read()
     soup=BeautifulSoup(r,"html.parser")
-    price=soup.find("span",id_="ref_")
+    price=soup.find("span",class_="quote-price-value")
     if price is None:
         print("None")
     else:

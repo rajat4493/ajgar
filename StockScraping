@@ -1,0 +1,24 @@
+from bs4 import BeautifulSoup
+import requests
+import urllib.request
+import re
+import openpyxl
+from http.cookiejar import CookieJar
+
+wb=openpyxl.load_workbook('D:\Rajat\python\DATA\STOCKMARKET DETAILS.xlsx')
+sheet=wb.get_sheet_by_name('test')
+
+
+
+for eachstock in sheet.columns[0]:
+    x=('https://www.google.com/finance?q='+eachstock.value)
+    print(x)
+    r=urllib.request.build_opener(urllib.request.HTTPCookieProcessor).open('http://www.investorguide.com/stock.php?ticker='+eachstock.value).read()
+    soup=BeautifulSoup(r,"html.parser")
+    price=soup.find("span",id_="ref_")
+    print(eachstock.value)
+    if price is None:
+        print("None")
+    else:
+        print (price.get_text())
+        

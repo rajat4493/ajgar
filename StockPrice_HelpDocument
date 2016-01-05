@@ -1,0 +1,25 @@
+LINE 1. Importing the BeautifulSoup package from bs4 module which 	will be used to parse the HTML/XML document/page which is 	fetched from the website used for webscraping.
+
+LINE 2. Importing urllib.request(Specific to v3) to send HTTP request 	i.e. access the websites for webscraping.
+
+LINE 3. Importing OpenPyXl, which which will be used to fetch the 	name of the companies whose stock values that are to be 	scraped out from MS Excel.
+
+LINE 4. Importing the CookieJar to save the cookies from the website 	being scrapped.
+
+LINE 6. 'Wb' is the variable here that is being used to load the 	excel sheet which contains the list of companies whose stock 	values are to be fetched from the website.
+
+LINE 7. 'sheet' is a variable which is being used to fetch the values 	 from the specific sheet named "test" where the values are 		 saved.
+
+LINE 11. Starting a for-loop to fetch the stock names one-by-one from 	 the column in the "test" sheet.
+
+LINE 12. 'x' variable is fetching the URL's for each stock value
+
+LINE 13. Displaying the URL's for cross-checking.
+
+LINE 14. 'r' variable where the HTML code of the webpage is being 	 fetched to.
+
+LINE 15. 'soup' variable will be used to store the HTML code in and 	html parser extension of BeautifulSoup is being used to parse 	the HTML code and get only the values which is required.
+
+LINE 16. 'price' variable is being used to store the values of the 	 stock prices of the respective stocks.
+     
+LINE 17-20. Printing the stock values if there else print NONE.
